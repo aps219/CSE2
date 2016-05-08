@@ -175,10 +175,7 @@ public class lab09{
     public static void main(String [] args) {
     
     Scanner myScanner = new Scanner( System.in );
-    
-    boolean repeat = true;
-    
-    while( repeat ){
+
         String adj1 = adjective();
         String adj2 = adjective();
         String adj3 = adjective();
@@ -187,11 +184,6 @@ public class lab09{
         String verb1 = pastVerb();
         
         System.out.println("The " + adj1 + " " + adj2 + " " + subj1 + " " + verb1 + " the " + adj3 + " " + obj1 + ".");
-        System.out.println("Would you like another sentence? (y/n): ");
-        String response = "";
-        if( response == "n" ){
-        repeat = false;
-        }
-    }
+
     }
 }

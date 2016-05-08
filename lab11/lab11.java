@@ -49,24 +49,44 @@ public static void main(String[] args) {
             min2 = array2[z];
         }
     }
-    System.out.println("The maximum of array1 is: " + max2);
-    System.out.println("The minimum of array1 is: " + min2);
+    System.out.println("The maximum of array2 is: " + max2);
+    System.out.println("The minimum of array2 is: " + min2);
     
     System.out.print("Enter an int: ");
     Scanner myScanner = new Scanner( System.in );
-    int integer = 0;
+    int target = 0;
     if( myScanner.hasNextInt() ){
-            integer = myScanner.nextInt();
-        if( integer >= 0 ){
-                integer = integer;
+            target = myScanner.nextInt();
+        if( target >= 0 ){
+                target = target;
         }
         else{
             System.out.println("You did not enter an int >= 0");
+            return;
         }
     }
     else{
         System.out.println("You did not enter an int");
+        return;
     }
     
+    int low = 0;
+    int high = array2.length - 1;
+    while(low <= high){
+        int mid = (low + high) / 2;
+        if (target == array2[mid]){
+            System.out.println(target + " was found in the list.");
+            return;
+        }
+        else if (target < array2[mid]){
+            high = mid - 1;
+        }
+        else{
+            low = mid + 1;
+        }
+    }
+    System.out.println(target + " was not found in the list.");
+    System.out.println("The number above the key was " + array2[low]);
+    System.out.println("The number below the key was " + array2[high]);
 }
 }
